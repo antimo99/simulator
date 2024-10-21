@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="panda">
+    <!-- Import panda urdf file -->
+    <xacro:include filename="$(find panda_mio)/urdf/panda.urdf" />
+
+    <!-- **************************************** -->
+    <!-- ADD WORLD -->
+    <link name="world"/>
+    <joint name="world_to_panda_hand_joint" type="fixed">
+        <origin rpy="0 0 0" xyz="0 0 0"/>
+        <parent link="world"/>
+        <child link="panda_link0"/>
+    </joint>    
+</robot>
